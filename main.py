@@ -66,6 +66,8 @@ def validate_name_and_phone(name, phone):
 
 @input_error
 def get_phone(name):
+    if name not in contacts:
+        return TypeError("Sorry, there's no such record, enter another name or check your spelling")
     return f"{name}'s phone is {contacts[name]}"
 
 
